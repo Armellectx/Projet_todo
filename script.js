@@ -5,7 +5,8 @@ const phrases = ["Thorben", "I", "miss", "you", "already", " :O", "What", "did",
 let phraseIndex = 0;
 
 // Tableau de couleurs
-const colors = ["#FF5733", "#33FF57", "#5733FF", "#FFFF33", "#33FFFF"];
+const colors = ["#FF5733", "#33FF57", "#5733FF", "#FFFF33", "#33FFFF", "#FF33FF", "#FFA500", "#800080", "#00FFFF", "#008000"];
+
 
 // Fonction pour changer la couleur et afficher la phrase
 function changeColorAndPhrase() {
