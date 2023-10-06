@@ -1,7 +1,7 @@
 // Sélectionnez le bouton et le div de l'affichage de la couleur
 const changeColorButton = document.getElementById("changeColorButton");
 const colorDisplay = document.getElementById("colorDisplay");
-const phrases = ["Thorben", "I", "miss", "you", "already", " :O", "What", "did", "you", "do", "to", "me", "I", "wish", "you", "shoot", "a", "fox", "Lol", "NO", "I", "am", "joking", "I", "am", "team", "Fox", "oupsi", "<3", "<333333", "kiss kiss"];
+const phrases = ["Martn", "I", "miss", "you", "already", " :O", "What", "did", "you", "do", "to", "me", "I", "wish", "you", "shoot", "a", "fox", "Lol", "NO", "I", "am", "joking", "I", "am", "team", "Fox", "oupsi", "<3", "<333333", "kiss kiss"];
 let phraseIndex = 0;
 
 // Tableau de couleurs
