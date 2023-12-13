@@ -1,10 +1,58 @@
 body {
-    text-align: center;
     font-family: Arial, sans-serif;
 }
 
-h1 {
-    color: #333;
+.container {
+    display: flex;
+}
+
+.column-left {
+    flex: 1;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.column-right {
+    flex: 1;
+    padding: 20px;
+    background-color: #e0e0e0;
+}
+
+.today {
+    background-color: #c5e1a5;
+    padding: 20px;
+    border: 1px solid #96bf6c;
+    text-align: center;
+    position: relative;
+}
+
+.vrak {
+    background-color: #c5e1a5;
+    padding: 20px;
+    border: 2px solid #96bf6c;
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+}
+
+.vrak .content {
+    display: block;
+}
+
+.vrak .edit-mode {
+    display: none;
+    width: 100%;
+    height: 100px; /* Ajustez la hauteur en fonction de vos préférences */
+}
+
+.today .content {
+    display: block;
+}
+
+.today .edit-mode {
+    display: none;
+    width: 100%;
+    height: 100px; /* Ajustez la hauteur en fonction de vos préférences */
 }
 
 button {
@@ -12,10 +60,222 @@ button {
     color: #fff;
     border: none;
     padding: 10px 20px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
-#colorDisplay {
-    font-size: 24px;
-    margin-top: 20px;
+button:hover {
+    background-color: #0056b3;
 }
+
+
+.preformatted {
+    white-space: pre-wrap;
+    text-align: left; /* Alignement du texte à gauche */
+    font-family: "DengXian Light", "Abadi Extra Light", Arial, sans-serif;
+    font-size: 14px; /* Taille de police par défaut en mode non édition */
+}
+
+.today {
+    background-color: #ffdbdb;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #ff8080;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+/* Ajout de styles pour le titre "TODAY" */
+.title {
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 0;
+    text-align: center;
+    padding-top: 0px; /* Ajout d'un peu d'espace en haut du titre */
+}
+
+/* ... (votre code CSS actuel) ... */
+
+
+.today .content {
+    display: block;
+}
+
+.today .edit-mode {
+    display: none;
+    width: 100%;
+    height: 100px;
+    text-align: left; /* Alignement du texte à gauche */
+}
+
+button {
+    background-color: #ddd; /* Gris clair */
+    color: #333; /* Couleur du texte gris foncé */
+    border: none;
+    padding: 5px 10px; /* Padding réduit */
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Effet d'ombre */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transition au survol */
+}
+
+button:hover {
+    background-color: #ccc; /* Gris plus foncé au survol */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Effet d'ombre accentué au survol */
+}
+
+/* Personnalisation du bouton "Edit" */
+#editButton {
+    background-color: #ddd; /* Gris clair */
+    color: #333; /* Couleur du texte gris foncé */
+    padding: 5px 10px; /* Padding réduit */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Effet d'ombre */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transition au survol */
+}
+
+#editButton:hover {
+    background-color: #ccc; /* Gris plus foncé au survol */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Effet d'ombre accentué au survol */
+}
+
+/* Personnalisation du bouton "Publish" */
+#publishButton {
+    background-color: #ffdbdb; /* Rose pâle */
+    color: #333; /* Couleur du texte gris foncé */
+    padding: 5px 10px; /* Padding réduit */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Effet d'ombre */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transition au survol */
+}
+
+#publishButton:hover {
+    background-color: #ffb3b3; /* Rose pâle plus foncé au survol */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Effet d'ombre accentué au survol */
+}
+/*
+
+.elements{
+    display: inline-block;
+}*/
+.project {
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    padding-right: 70px;
+    padding-left: 70px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    display: inline-block;
+}
+
+.project:hover {
+    background-color: #f5f5f5;
+    border-color: #999;
+}
+
+
+
+/*
+.project {
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}*/
+
+.project:hover {
+    background-color: #f5f5f5;
+    border-color: #999;
+}
+
+/* Ajoutez des classes pour les couleurs de fond */
+.color1 {
+    background-color: #ffdbdb; /* Exemple de couleur pastel */
+}
+
+.color2 {
+    background-color: #cef1e6; /* Exemple de couleur pastel */
+}
+
+.color3 {
+    background-color: #ffd1a0; /* Exemple de couleur pastel */
+}
+.color4 {
+    background-color: #b1b3f1; /* Exemple de couleur pastel */
+}
+
+.color5 {
+    background-color: #b4e7c3; /* Exemple de couleur pastel */
+}
+
+.color6 {
+    background-color: #e19fbe; /* Exemple de couleur pastel */
+}
+.color7 {
+    background-color: #d5abab; /* Exemple de couleur pastel */
+}
+
+.color8 {
+    background-color: #c2aeeb; /* Exemple de couleur pastel */
+}
+
+.color9 {
+    background-color: #ffd1a0; /* Exemple de couleur pastel */
+}
+.color10 {
+    background-color: #c1e6eb; /* Exemple de couleur pastel */
+}
+
+.color11 {
+    background-color: #31e166; /* Exemple de couleur pastel */
+}
+
+.color12 {
+    background-color: #d83c85; /* Exemple de couleur pastel */
+}
+
+.close-button {
+    cursor: pointer;
+    color: red; /* Couleur de la croix (peut être modifiée selon votre choix) */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.close-button-task {
+    cursor: pointer;
+    color: red; /* Couleur de la croix (peut être modifiée selon votre choix) */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.project-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.project-title {
+    flex: 1;
+    margin-left: 10px;
+}
+
+
+.hidden {
+    display: none;
+  }
+  
+  /* Styles pour le formulaire de mot de passe */
+.password-form {
+    text-align: center;
+    margin-top: 100px;
+  }
