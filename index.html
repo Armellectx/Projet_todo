@@ -3,13 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARTN JADORE DORMR AVEC TO</title>
+    <title>TO DO</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1>Today is hunting day</h1>
-    <button id="changeColorButton">Click to Discover the meaningful colorful speach!</button>
-    <div id="colorDisplay">Its so crazy!</div>
+
+    <div id="passwordForm" class="password-form">
+        <h2>Entrez le code pour accéder :</h2>
+        <input type="password" id="passwordInput" placeholder="Entrez le code">
+        <button onclick="checkPassword()">Valider</button>
+      </div>
+      
+      <div id="mainContent" class="hidden">
+        <div class="container">
+            <div class="column-left">
+                <div class="today">
+                    <h2 class="title">TODAY</h2>
+                    <div class="content">
+                        <div id="displayContent" class="preformatted">Cliquez sur le bouton "Edit" pour ajouter du contenu.</div>
+                        <textarea id="editTextarea" class="edit-mode"></textarea>
+                        <button id="editButton" onclick="toggleEditMode()">Edit</button>
+                    </div>
+                </div>
+
+                <div class="process">
+                    <button id="addProjectButton" onclick="toggleProjectInput()">Ajouter un projet</button>
+                    <div id="projectInput" style="display: none;">
+                        <textarea id="projectTextarea" class="project-input"></textarea>
+                        <button id="addButton" onclick="addProject()">Ajouter</button>
+                    </div>
+                    <div id="projectList"></div>
+                </div>
+
+            </div>
+            <div class="column-right">
+                <div class="ponctuel">
+                    <button id="addtaskButton" onclick="toggletaskInput()">Ajouter une tâche</button>
+                    <div id="taskInput" style="display: none;">
+                        <textarea id="taskTextarea" class="task-input"></textarea>
+                        <button id="addTaskButton" onclick="addTask()">Ajouter</button>
+                    </div>
+                    <div id="taskList"></div>
+                </div>
+
+
+                <div class="vrak">
+                    <h2 class="title">IDEES EN VRAK</h2>
+                    <div class="content">
+                        <div id="displayContent2" class="preformatted">Cliquez sur le bouton "Edit" pour ajouter du contenu.</div>
+                        <textarea id="editTextarea2" class="edit-mode"></textarea>
+                        <button id="editButton2" onclick="toggleEditMode2()">Edit</button>
+                    </div>
+                </div>
+
+                <div class="passe">
+                    <!-- Zone "passé" (à compléter) -->
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
+
 </body>
 </html>
+
