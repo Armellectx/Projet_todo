@@ -1,43 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Récupérer des données de Google Sheets</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>Données de Google Sheets</h1>
-  <button onclick="getData()">Récupérer les données</button>
-  
-  <script src="https://apis.google.com/js/api.js"></script>
-  <script>
-    function getData() {
-      gapi.load('client', initClient);
-    }
 
-    function initClient() {
-      gapi.client.init({
-        apiKey: 'AIzaSyD3hiQzr6u4uOjJfhJhvMCko1rypauGDPM', 
-        discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-      }).then(function() {
-        return gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId: '1nfJMiZa-PeazqqJQT3yL5BecESXhQJliM60RIPY19do', 
-          range: 'Sheet1!A1:B1', 
-        });
-      }).then(function(response) {
-        var values = response.result.values;
-        if (values.length > 0) {
-          for (var row = 0; row < values.length; row++) {
-            var rowData = values[row];
-            console.log('Données récupérées : ', rowData);
-            // Utilisez les données récupérées ici dans votre application
-          }
-        } else {
-          console.log('Aucune donnée trouvée.');
-        }
-      }, function(reason) {
-        console.error('Erreur : ', reason.result.error.message);
-      });
-    }
-  </script>
+    <div id="passwordForm" class="password-form">
+        <h2>Entrez le code pour accéder :</h2>
+        <input type="password" id="passwordInput" placeholder="Entrez le code">
+        <button onclick="checkPassword()">Valider</button>
+      </div>
+      
+      <div id="mainContent" class="hidden">
+        <div class="container">
+            <div class="column-left">
+                <div class="today">
+                    <h2 class="title">TODAY</h2>
+                    <div class="content">
+                        <div id="displayContent" class="preformatted">Cliquez sur le bouton "Edit" pour ajouter du contenu.</div>
+                        <textarea id="editTextarea" class="edit-mode"></textarea>
+                        <button id="editButton" onclick="toggleEditMode()">Edit</button>
+                    </div>
+                </div>
+
+                <div class="process">
+                    <button id="addProjectButton" onclick="toggleProjectInput()">Ajouter un projet</button>
+                    <div id="projectInput" style="display: none;">
+                        <textarea id="projectTextarea" class="project-input"></textarea>
+                        <button id="addButton" onclick="addProject()">Ajouter</button>
+                    </div>
+                    <div id="projectList"></div>
+                </div>
+
+            </div>
+            <div class="column-right">
+                <div class="ponctuel">
+                    <button id="addtaskButton" onclick="toggletaskInput()">Ajouter une tâche</button>
+                    <div id="taskInput" style="display: none;">
+                        <textarea id="taskTextarea" class="task-input"></textarea>
+                        <button id="addTaskButton" onclick="addTask()">Ajouter</button>
+                    </div>
+                    <div id="taskList"></div>
+                </div>
+
+
+                <div class="vrak">
+                    <h2 class="title">IDEES EN VRAK</h2>
+                    <div class="content">
+                        <div id="displayContent2" class="preformatted">Cliquez sur le bouton "Edit" pour ajouter du contenu.</div>
+                        <textarea id="editTextarea2" class="edit-mode"></textarea>
+                        <button id="editButton2" onclick="toggleEditMode2()">Edit</button>
+                    </div>
+                </div>
+
+                <div class="passe">
+                    <!-- Zone "passé" (à compléter) -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
 </body>
 </html>
+

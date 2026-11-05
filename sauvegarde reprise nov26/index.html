@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Récupérer des données de Google Sheets</title>
+</head>
+<body>
+  <h1>Données de Google Sheets</h1>
+  <button onclick="getData()">Récupérer les données</button>
+  
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script>
+    function getData() {
+      gapi.load('client', initClient);
+    }
+
+    function initClient() {
+      gapi.client.init({
+        apiKey: 'AIzaSyD3hiQzr6u4uOjJfhJhvMCko1rypauGDPM', 
+        discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+      }).then(function() {
+        return gapi.client.sheets.spreadsheets.values.get({
+          spreadsheetId: '1nfJMiZa-PeazqqJQT3yL5BecESXhQJliM60RIPY19do', 
+          range: 'Sheet1!A1:B1', 
+        });
+      }).then(function(response) {
+        var values = response.result.values;
+        if (values.length > 0) {
+          for (var row = 0; row < values.length; row++) {
+            var rowData = values[row];
+            console.log('Données récupérées : ', rowData);
+            // Utilisez les données récupérées ici dans votre application
+          }
+        } else {
+          console.log('Aucune donnée trouvée.');
+        }
+      }, function(reason) {
+        console.error('Erreur : ', reason.result.error.message);
+      });
+    }
+  </script>
+</body>
+</html>
